@@ -1,0 +1,57 @@
+Polling:
+    Polling is a technique in computer networking and web development where
+    a client repeadtedly sends requests to a server at regular intervals to 
+    check for new data or updates. it is often used when real-time communication 
+    is need but websockets or other event-driven methods are not implemented.
+
+how polling works:
+    1. the client sends an HTTP request to the server.
+    2. the server processes the request and responds with the current state 
+       or data.
+    3. after receiving the response, the client waits for a specified time
+       before sending the another request.
+
+key charecteristics:
+    1. Frequency: polling occurs at regular intervals
+    2. Stateless: each request is independent, meaning the server doesn't 
+                  maintain any ongoing connection with the client.
+    3. Latency: there's delay between the server updating data and the client
+                polling for it.
+    4. Resource intensive: can increase server load due to frequent requests,
+                           even when no new data is available.
+
+Socket: 
+    A socket is a communication endpoint that allows two machines to 
+    exchange data in real-time over a network. in web development, web sockets
+    are commonly used for biderectional communication between a client and a server.
+
+Web-Socket: 
+    A websocket is a protocol that provides full-duplex communication between
+    a client and a server over a single, long-lived connection. Unlike traditional
+    HTTP requests, where a client initiates a request and the server responds,
+    websockets allow both the client and server to send data to each other anytime.
+
+How WebSockets Work
+    1. Handshake:
+        i. The communication starts as an HTTP request from the client to the server.
+        ii. The request contains an "Upgrade" header to switch the protocol from HTTP 
+            to WebSocket (ws:// or wss:// for secure connections).
+        iii. If the server supports WebSockets, it responds with a status code 101 
+             Switching Protocols.
+
+    2. Full-Duplex Connection:
+        i. After the handshake, the connection is upgraded, and the WebSocket protocol 
+           takes over.
+        ii. The client and server can now send and receive data simultaneously.
+
+    3. Communication:
+        i. Messages are exchanged in a lightweight, efficient format (usually text or binary).
+        ii. The connection remains open until either side explicitly closes it.
+
+Features of WebSockets
+    1. Real-Time Communication: Ideal for applications like chat apps, multiplayer games, 
+       or live updates.
+    2. Persistent Connection: Eliminates the need for repeated requests like in polling.
+    3. Bi-Directional: Both the client and server can initiate communication.
+    4. Efficient: Low overhead compared to HTTP-based solutions.
+
